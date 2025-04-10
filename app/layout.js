@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Link from "next/link";
 import Header from "@/components/header";
 import { ClerkProvider } from "@clerk/nextjs";
+import { neobrutalism } from "@clerk/themes";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -16,7 +17,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        baseTheme: neobrutalism,
+      }}
+    >
       <html lang="en" suppressHydrationWarning>
         <body className={`${spaceGrotesk.className}`}>
           <ThemeProvider
