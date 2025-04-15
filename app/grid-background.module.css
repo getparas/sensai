@@ -1,0 +1,132 @@
+.gridBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0a14;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.gridBackground::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at center, transparent 0%, #0a0a14 85%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 100% 100%, 50px 50px, 50px 50px;
+  background-position: center center;
+  opacity: 0.9;
+  animation: pulse 8s ease-in-out infinite alternate;
+}
+
+.gridBackground::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      217deg,
+      rgba(255, 0, 0, 0.05),
+      rgba(255, 0, 0, 0) 70%
+    ),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0) 70%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.05), rgba(0, 0, 255, 0) 70%);
+  opacity: 0.6;
+}
+
+.spotlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at var(--x) var(--y),
+    rgba(100, 100, 255, 0.15) 0%,
+    transparent 25%
+  );
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/* Add floating particles */
+.gridBackground::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at center, transparent 0%, #0a0a14 85%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0) 5px
+    ),
+    radial-gradient(
+      circle at 75% 20%,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0) 4px
+    ),
+    radial-gradient(
+      circle at 40% 80%,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0) 6px
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0) 5px
+    );
+  background-size: 100% 100%, 50px 50px, 50px 50px, 100% 100%, 100% 100%,
+    100% 100%, 100% 100%;
+  background-position: center center;
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    background-position: center center, center center, center center, 0% 0%,
+      0% 0%, 0% 0%, 0% 0%;
+  }
+  25% {
+    background-position: center center, center center, center center, 2% 3%,
+      -1% 2%, 1% -1%, -2% 1%;
+  }
+  50% {
+    background-position: center center, center center, center center, -1% 1%,
+      2% -2%, -2% 2%, 1% -1%;
+  }
+  75% {
+    background-position: center center, center center, center center, 1% -2%,
+      -2% 1%, 2% 1%, -1% -1%;
+  }
+  100% {
+    background-position: center center, center center, center center, 0% 0%,
+      0% 0%, 0% 0%, 0% 0%;
+  }
+}
