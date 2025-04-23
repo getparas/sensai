@@ -21,19 +21,19 @@ export async function updateUser(data) {
         // find if the industry exists
         let industryInsight = await tx.industryInsight.findUnique({
           where: {
-            indstry: data.indstry,
+            industry: data.industry,
           },
         });
         // if industry doesn't exist, create it with default values
         if (!industryInsight) {
           industryInsight = await tx.industryInsight.create({
             data: {
-              industry: data.indstry,
-              salaryRange: [], // Default empty array
+              industry: data.industry,
+              salaryRanges: [], // Default empty array
               growthRate: 0, // Default value
-              demandLevel: "Medium", // Default value
+              demandLevel: "MEDIUM", // Default value
               topSkills: [], // Default empty array
-              marketOutlook: "Neutral", // Default value
+              marketOutlook: "NEUTRAL", // Default value
               keyTrends: [], // Default empty array
               recommendedSkills: [], // Default empty array
               nextUpdate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 1 week from now
@@ -46,7 +46,7 @@ export async function updateUser(data) {
             id: user.id,
           },
           data: {
-            industry: data.indstry,
+            industry: data.industry,
             experience: data.experience,
             bio: data.bio,
             skills: data.skills,
@@ -57,10 +57,10 @@ export async function updateUser(data) {
       { timeout: 10000 } // default: 5000
     );
 
-    return result.user;
+    return { success: true, ...result };
   } catch (error) {
     console.error("Error updating user and industry: ", error.message);
-    throw new Error("Failed to update profile");
+    throw new Error("Failed to update profile " + error.message);
   }
 }
 
@@ -86,7 +86,7 @@ export async function getUserOnBoardingStatus() {
       },
     });
     return {
-      isOnboarded: !!user?.indstry,
+      isOnboarded: !!user?.industry,
     };
   } catch (error) {
     console.error("Error checking onboarding status: ", error.message);
