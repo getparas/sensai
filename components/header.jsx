@@ -22,15 +22,15 @@ import { checkUser } from "@/lib/checkUser";
 const Header = async () => {
   await checkUser();
   return (
-    <header className="fixed top-0 w-full border-b bg-background/80 backdrop-blur-md z-50 supports-[backdrop-filter]:bg-background/60">
-      <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
+    <header className="fixed top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
+      <nav className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/">
           <Image
             src="/sensaiLogoWhiteV1.png"
             alt="Sensei Logo"
             width={100}
             height={100}
-            className="h-12 py-1 w-auto object-contain"
+            className="h-12 w-auto object-contain py-1"
           />
         </Link>
         <div className="flex items-center space-x-2 md:space-x-4">

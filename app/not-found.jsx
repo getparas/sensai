@@ -3,12 +3,12 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[100vh] mx-4 text-center">
-      <h1 className="text-6xl font-bold gradient-title gradient-premium mb-4">
+    <div className="mx-4 flex min-h-[100vh] flex-col items-center justify-center text-center">
+      <h1 className="gradient-title gradient-premium mb-4 text-6xl font-bold">
         404
       </h1>
-      <h2 className="text-2xl text-semibold mb-4">Page Not Found</h2>
-      <p className="text-gray-600 mb-8">
+      <h2 className="text-semibold mb-4 text-2xl">Page Not Found</h2>
+      <p className="mb-8 text-gray-600">
         Oops! The page yo&apos;re looking for doesn&apos;t exist or has been
         moved.
       </p>

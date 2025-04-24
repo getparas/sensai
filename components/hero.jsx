@@ -30,10 +30,10 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="w-full py-36 md:pt-48  overflow-hidden">
+    <section className="w-full overflow-hidden py-36 md:pt-48">
       <div className="space-y-6 text-center">
-        <div className="space-y-6 mx-auto">
-          <h1 className="text-5xl font-bold md:text-6xl lg:text-7xl xl:text-8xl gradient-title gradient-premium shimmer">
+        <div className="mx-auto space-y-6">
+          <h1 className="gradient-title gradient-premium shimmer text-5xl font-bold md:text-6xl lg:text-7xl xl:text-8xl">
             Unlock Your Potential for <br /> Professional Success
           </h1>
           <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl">
@@ -44,7 +44,7 @@ const HeroSection = () => {
         </div>
         <div className="flex justify-center">
           <Link href="/dashboard">
-            <Button size="lg" className="px-8 group animate-bounce">
+            <Button size="lg" className="group animate-bounce px-8">
               Get Started
               <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
@@ -57,7 +57,7 @@ const HeroSection = () => {
               width={1280}
               height={720}
               alt="Banner Sensai"
-              className="rounded-2xl shadow-2xl mx-auto"
+              className="mx-auto rounded-2xl shadow-2xl"
               priority
             />
           </div>

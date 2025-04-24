@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 
 const CtaSection = () => {
   return (
-    <section className="w-full py-16 md:py-24 lg:py-32 bg-background relative overflow-hidden">
+    <section className="relative w-full overflow-hidden bg-background py-16 md:py-24 lg:py-32">
       {/* Decorative background elements */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="pointer-events-none absolute inset-0">
         {/* Gradient background */}
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background/50"></div>
 
@@ -18,7 +18,7 @@ const CtaSection = () => {
           {[...Array(5)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 rounded-full bg-primary/30"
+              className="absolute h-1 w-1 rounded-full bg-primary/30"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
@@ -37,35 +37,35 @@ const CtaSection = () => {
         </div>
 
         {/* Gradient orbs */}
-        <div className="absolute -top-[20%] -left-[10%] w-[40%] h-[40%] bg-gradient-premium opacity-10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-[20%] -right-[10%] w-[40%] h-[40%] bg-gradient-modern opacity-10 rounded-full blur-3xl"></div>
+        <div className="bg-gradient-premium absolute -left-[10%] -top-[20%] h-[40%] w-[40%] rounded-full opacity-10 blur-3xl"></div>
+        <div className="bg-gradient-modern absolute -bottom-[20%] -right-[10%] h-[40%] w-[40%] rounded-full opacity-10 blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="container relative z-10 mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
+          className="mx-auto max-w-4xl"
         >
-          <div className="relative bg-card/40 backdrop-blur-md border border-primary/10 rounded-2xl p-8 md:p-12 shadow-xl overflow-hidden">
+          <div className="relative overflow-hidden rounded-2xl border border-primary/10 bg-card/40 p-8 shadow-xl backdrop-blur-md md:p-12">
             {/* Decorative elements */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-premium"></div>
-            <div className="absolute -top-6 -right-6 text-primary/20 rotate-12">
-              <Sparkles className="w-20 h-20" />
+            <div className="bg-gradient-premium absolute left-0 top-0 h-1 w-full"></div>
+            <div className="absolute -right-6 -top-6 rotate-12 text-primary/20">
+              <Sparkles className="h-20 w-20" />
             </div>
-            <div className="absolute -bottom-6 -left-6 text-primary/10 -rotate-12">
-              <Star className="w-16 h-16" />
+            <div className="absolute -bottom-6 -left-6 -rotate-12 text-primary/10">
+              <Star className="h-16 w-16" />
             </div>
 
-            <div className="text-center relative z-10">
+            <div className="relative z-10 text-center">
               <motion.h2
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter mb-6 gradient-title gradient-premium"
+                className="gradient-title gradient-premium mb-6 text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl"
               >
                 Take the Next Step in Your Career Journey
               </motion.h2>
@@ -75,7 +75,7 @@ const CtaSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-8"
+                className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl"
               >
                 Join thousands of ambitious professionals transforming their
                 careers with our intelligent tools, expert insights, and
@@ -89,13 +89,13 @@ const CtaSection = () => {
                 viewport={{ once: true }}
                 className="relative inline-block"
               >
-                <div className="absolute -inset-1 bg-gradient-premium rounded-lg blur-md opacity-70"></div>
+                <div className="bg-gradient-premium absolute -inset-1 rounded-lg opacity-70 blur-md"></div>
                 <Link href="/dashboard" passHref>
                   <Button
                     size="lg"
-                    className="relative h-14 px-8 bg-background hover:bg-background/80 text-foreground border-2 border-transparent hover:border-primary/50 shadow-lg group animate-bounce"
+                    className="group relative h-14 animate-bounce border-2 border-transparent bg-background px-8 text-foreground shadow-lg hover:border-primary/50 hover:bg-background/80"
                   >
-                    <span className="mr-2 gradient-premium text-transparent bg-clip-text font-bold">
+                    <span className="gradient-premium mr-2 bg-clip-text font-bold text-transparent">
                       Start Your Journey Today
                     </span>
                     <motion.div
@@ -107,7 +107,7 @@ const CtaSection = () => {
                         ease: "easeInOut",
                       }}
                     >
-                      <ArrowRight className="w-5 h-5 text-primary group-hover:text-primary/80 transition-colors" />
+                      <ArrowRight className="h-5 w-5 text-primary transition-colors group-hover:text-primary/80" />
                     </motion.div>
                   </Button>
                 </Link>
