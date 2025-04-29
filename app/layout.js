@@ -6,6 +6,7 @@ import Header from "@/components/header";
 import { ClerkProvider } from "@clerk/nextjs";
 import { neobrutalism } from "@clerk/themes";
 import { Toaster } from "sonner";
+import { LoadingProvider } from "@/components/LoadingContext";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -33,7 +34,9 @@ export default function RootLayout({ children }) {
           >
             {/* header */}
             <Header />
-            <main className="min-h-screen">{children}</main>
+            <main className="min-h-screen">
+              <LoadingProvider>{children}</LoadingProvider>
+            </main>
             {/* toast */}
             <Toaster richColors />
             {/* footer */}
