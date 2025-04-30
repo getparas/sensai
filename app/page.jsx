@@ -2,16 +2,12 @@
 
 import { useEffect, useState } from "react";
 import styles from "./grid-background.module.css";
-import { features } from "@/data/features";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { motion } from "framer-motion";
 import HeroSection from "@/components/hero";
+import FeaturesSection from "@/components/features-section";
 import StatisticsSection from "@/components/statistics-section";
 import HowItWorksSection from "@/components/how-it-works-section";
 import FaqSection from "@/components/faq-section";
 import CtaSection from "@/components/cta-section";
-import FeaturesSection from "@/components/features-section";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });

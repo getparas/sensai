@@ -1,8 +1,9 @@
-import React from "react";
+import { getCoverLetter } from "@/actions/cover-letter";
+import ClientCoverLetterDetail from "./ClientCoverLetterDetail";
 
-const CoverLetter = async ({ params }) => {
+export default async function EditCoverLetterPage({ params }) {
   const { id } = await params;
-  return <div>CoverLetter: {id}</div>;
-};
+  const coverLetter = await getCoverLetter(id);
 
-export default CoverLetter;
+  return <ClientCoverLetterDetail coverLetter={coverLetter} />;
+}
