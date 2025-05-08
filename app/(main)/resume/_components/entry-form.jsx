@@ -264,10 +264,20 @@ export function EntryForm({ type, entries, onChange }) {
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                   <div className="space-y-2">
                     <label className="text-sm font-medium">
-                      Title/Position
+                      {type === "Experience"
+                        ? "Title/Position"
+                        : type === "Education"
+                          ? "Degree/Certification"
+                          : "Project Name"}
                     </label>
                     <Input
-                      placeholder="Title/Position"
+                      placeholder={
+                        type === "Experience"
+                          ? "Title/Position"
+                          : type === "Education"
+                            ? "Degree/Certification"
+                            : "Project Name"
+                      }
                       {...register("title")}
                       error={errors.title}
                       className="transition-all duration-200 focus:border-primary/50 focus:ring-2 focus:ring-primary/20"
@@ -280,10 +290,20 @@ export function EntryForm({ type, entries, onChange }) {
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium">
-                      Organization/Company
+                      {type === "Experience"
+                        ? "Organization/Company"
+                        : type === "Education"
+                          ? "Institution/School"
+                          : "Technologies Used"}
                     </label>
                     <Input
-                      placeholder="Organization/Company"
+                      placeholder={
+                        type === "Experience"
+                          ? "Organization/Company"
+                          : type === "Education"
+                            ? "Institution/School"
+                            : "Technologies Used"
+                      }
                       {...register("organization")}
                       error={errors.organization}
                       className="transition-all duration-200 focus:border-primary/50 focus:ring-2 focus:ring-primary/20"
