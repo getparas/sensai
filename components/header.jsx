@@ -19,6 +19,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { checkUser } from "@/lib/checkUser";
+import GrowthToolsMenu from "./growth-tools-menu";
 
 const Header = async () => {
   await checkUser();
@@ -42,47 +43,7 @@ const Header = async () => {
                 <span className="hidden md:block">Industry Insights</span>
               </Button>
             </Link>
-            <DropdownMenu>
-              <DropdownMenuTrigger>
-                <Button>
-                  <StarsIcon className="h-4 w-4" />
-                  <span className="hidden md:block">Growth Tools</span>
-                  <ChevronDown className="ml-2 h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem>
-                  <Link href={"/resume"} className="flex items-center gap-2">
-                    <FileText className="h-4 w-4" />
-                    <span>Build Resume</span>
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link
-                    href={"/cover-letter"}
-                    className="flex items-center gap-2"
-                  >
-                    <PenBox className="h-4 w-4" />
-                    <span>Cover Letter</span>
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href={"/interview"} className="flex items-center gap-2">
-                    <GraduationCap className="h-4 w-4" />
-                    <span>Interview Prep</span>
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link
-                    href="/recommended-jobs"
-                    className="flex w-full items-center gap-2"
-                  >
-                    <Briefcase className="h-4 w-4" />
-                    <span>Recommended Jobs</span>
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <GrowthToolsMenu />
           </SignedIn>
           <SignedOut>
             <SignInButton>
