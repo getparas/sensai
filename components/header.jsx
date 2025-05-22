@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
 import {
+  Briefcase,
   ChevronDown,
   FileText,
   GraduationCap,
@@ -69,6 +70,15 @@ const Header = async () => {
                   <Link href={"/interview"} className="flex items-center gap-2">
                     <GraduationCap className="h-4 w-4" />
                     <span>Interview Prep</span>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link
+                    href="/recommended-jobs"
+                    className="flex w-full items-center gap-2"
+                  >
+                    <Briefcase className="h-4 w-4" />
+                    <span>Recommended Jobs</span>
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>

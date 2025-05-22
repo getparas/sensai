@@ -32,6 +32,7 @@
     "html2pdf.js": "^0.10.3",
     "inngest": "^3.35.0",
     "lucide-react": "^0.475.0",
+    "natural": "^8.0.1",
     "next": "15.2.3",
     "next-themes": "^0.4.4",
     "react": "^19.0.0",
