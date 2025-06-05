@@ -1,14 +1,8 @@
 "use client";
 
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/react";
-import {
-  FileText,
-  PenBox,
-  GraduationCap,
-  Briefcase,
-  ChevronDownIcon,
-  StarsIcon,
-} from "lucide-react";
+import { Book1, Briefcase, DocumentText, Edit, Flashy } from "iconsax-reactjs";
+import { ChevronDownIcon } from "lucide-react";
 import Link from "next/link";
 
 export default function GrowthToolsMenu() {
@@ -16,7 +10,7 @@ export default function GrowthToolsMenu() {
     <Menu as="div" className="relative inline-block text-left">
       {/* Trigger */}
       <MenuButton className="inline-flex items-center gap-2 rounded-md bg-zinc-800 px-3 py-1.5 text-sm font-semibold text-white shadow focus:outline-none">
-        <StarsIcon className="h-4 w-4" />
+        <Flashy size="16" color="#d9e3f0" variant="Bulk" />
         <span className="hidden md:block">Growth Tools</span>
         <ChevronDownIcon className="ml-2 h-4 w-4" />
       </MenuButton>
@@ -32,7 +26,7 @@ export default function GrowthToolsMenu() {
                   active ? "bg-zinc-700 text-white" : "text-gray-300"
                 }`}
               >
-                <FileText className="h-4 w-4" />
+                <DocumentText size="16" color="#d9e3f0" variant="Bulk" />
                 Build Resume
               </Link>
             )}
@@ -46,7 +40,7 @@ export default function GrowthToolsMenu() {
                   active ? "bg-zinc-700 text-white" : "text-gray-300"
                 }`}
               >
-                <PenBox className="h-4 w-4" />
+                <Edit size="16" color="#d9e3f0" variant="Bulk" />
                 Cover Letter
               </Link>
             )}
@@ -60,7 +54,7 @@ export default function GrowthToolsMenu() {
                   active ? "bg-zinc-700 text-white" : "text-gray-300"
                 }`}
               >
-                <GraduationCap className="h-4 w-4" />
+                <Book1 size="16" color="#d9e3f0" variant="Bulk" />
                 Interview Prep
               </Link>
             )}
@@ -74,7 +68,7 @@ export default function GrowthToolsMenu() {
                   active ? "bg-zinc-700 text-white" : "text-gray-300"
                 }`}
               >
-                <Briefcase className="h-4 w-4" />
+                <Briefcase size="16" color="#d9e3f0" variant="Bulk" />
                 Recommended Jobs
               </Link>
             )}

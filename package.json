@@ -31,6 +31,7 @@
     "date-fns": "^4.1.0",
     "framer-motion": "^12.6.5",
     "html2pdf.js": "^0.10.3",
+    "iconsax-reactjs": "^0.0.8",
     "inngest": "^3.35.0",
     "lucide-react": "^0.475.0",
     "natural": "^8.0.1",

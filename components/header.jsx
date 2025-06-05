@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { checkUser } from "@/lib/checkUser";
 import GrowthToolsMenu from "./growth-tools-menu";
+import { ChartSquare } from "iconsax-reactjs";
 
 const Header = async () => {
   await checkUser();
@@ -39,7 +40,7 @@ const Header = async () => {
           <SignedIn>
             <Link href={"/dashboard"}>
               <Button variant={"outline"}>
-                <LayoutDashboard className="h-4 w-4" />
+                <ChartSquare size="44" color="#d9e3f0" variant="Bulk" />
                 <span className="hidden md:block">Industry Insights</span>
               </Button>
             </Link>
