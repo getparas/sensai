@@ -1,4 +1,4 @@
-# Sensai: Your AI-Powered Career Coach
+# Sensai: Your Smart Career Coach
 
 
 Sensai is a comprehensive, AI-driven platform designed to empower job seekers in their career journey. From crafting the perfect resume to acing the interview, Sensai provides a suite of tools to help users land their dream job.
